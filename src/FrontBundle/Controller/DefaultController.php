@@ -72,4 +72,13 @@ class DefaultController extends Controller
         return $this->render('@Front/Default/blockchain.html.twig');
       
     }
+
+    /**
+     * @Route("/histoire_crypto", name="default_histoire_crypto")
+     */
+
+     public function show_hist_crypto(){
+         
+        return $this->render('@Front/Default/histoire_crypto.html.twig');
+     }
 }
