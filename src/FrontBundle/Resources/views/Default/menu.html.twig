@@ -5,17 +5,18 @@
         <div class="menu-one-page-container">
             <ul id="menu-one-page" class="menu">
 
-                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#to_initial">Home</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ path('homepage') }}">Home</a></li>
                 <li class="homepages-badge menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children">
                     <a href="#">Crypto</a>
                     <ul class="sub-menu">
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a href="blog-single-bitcoin.html">Bitcoin</a></li>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="blog-single-litecoin.html">Litecoin</a></li>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="blog-single-ethereum.html">Ethereum</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a href="{{ path('default_bitcoin') }}">Bitcoin</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ path('default_litecoin') }}">Litecoin</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="{{ path('default_ethereum') }}">Ethereum</a></li>
                     </ul>
                 </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ path('default_blockchain') }}">Blockchain</a></li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#to_token_sale">Token sale</a></li>
-                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#to_products">Blockchain</a></li>
+               
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#to_roadmap">Timeline</a></li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#to_team">Team</a></li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#to_testimonial">Testimonial</a></li>
@@ -35,8 +36,4 @@
 </div>
 </nav>
 
-{% block body %}
-
-
-
-{% endblock %}
+{% block body %}{% endblock %}

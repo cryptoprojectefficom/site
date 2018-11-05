@@ -33,4 +33,43 @@ class DefaultController extends Controller
 
         return $this->render('@Front/Default/index.html.twig', ['lastArticle' => $lastArticle, 'articles' => $output]);
     }
+
+    /**
+     * @Route("/bitcoin", name="default_bitcoin")
+     */
+
+     public function show_bitcoin(){
+
+        return $this->render('@Front/Default/bitcoin.html.twig');
+     }
+
+     
+    /**
+     * @Route("/litecoin", name="default_litecoin")
+     */
+
+    public function show_litecoin(){
+
+        return $this->render('@Front/Default/litecoin.html.twig');
+     }
+
+     
+    /**
+     * @Route("/ethereum", name="default_ethereum")
+     */
+
+    public function show_ethereum(){
+
+        return $this->render('@Front/Default/ethereum.html.twig');
+     }
+
+     /**
+      * @Route("/blockchain", name="default_blockchain")
+      */
+
+      public function show_blockchain(){
+      
+        return $this->render('@Front/Default/blockchain.html.twig');
+      
+    }
 }

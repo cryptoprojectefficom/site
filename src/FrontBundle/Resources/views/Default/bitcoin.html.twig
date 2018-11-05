@@ -1,0 +1,98 @@
+{% extends "@Core/Default/layout.html.twig" %}
+
+{% block body %}
+<div class="one-page-blog">
+        <div class="container padding_80">
+            <div class="row">
+                <div class="col-md-9 main-content">
+                    <div class="article-header">
+                        <div class="article-details">
+                            <img width="900" height="550" src="bundles/front/assets/images/bitcurrency_theme-1-900x550.jpg" class="attachment-cryptic_blog_900x550   size-cryptic_blog_900x550 wp-post-image" alt="" />
+                            <div class="clearfix"></div>
+                            <h1 class="post-title text-white">
+                               <strong>Le Bitcoin</strong>
+                            </h1>
+                            <div class="post-category-comment-date row">
+                                <span class="post-date"><i class="icon-calendar"></i>4 Novembre 2018</span>
+                                <span class="post-categories">
+                                    <i class="icon-tag"></i>
+                                    <a href="#" rel="tag">Crypto</a>
+                                </span>
+                                <span class="post-author">
+                                    <i class="icon-user icons"></i>
+                                    <a href="#">Maxence</a>
+                                </span> 
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CONTENT -->
+                    <div class="article-content">
+                        <p>Nemo enim ipsam voluptatem quia volup tas sit aspernatur aut odit aut fu sed quia conse quun tur magni dolor quia. In scelerisque turpis vel bibendum sodales. Nunc consectetur nec mi eu vehicula.</p>
+                        <p><span></span></p>
+                        <p>Praesent et tincidunt magna, eget consectetur nunc. Ut vestibulum cursus eros eu pulvinar. Maecenas sagittis odio sit amet lorem pharetra, quis iaculis diam molestie. Sed eros felis, consectetur quis tellus quis, molestie fringilla nunc. Cras volutpat, dolor sodales tincidunt finibus, purus magna lacinia lorem, ullamcorper hendrerit urna tellus at lorem.</p>
+                    </div>
+                    <!-- Cryptocurrency List Widget -->
+                    <h3 class="text-bold text-white">Listes des crypto-monnaies</h3>
+                    <div class="ccpw-widget">
+                        <table class="ccpw_table table-blog-affiliate">
+                            <thead>
+                                <tr>
+                                    <th>Crypto-monnaie</th>
+                                    <th>Prix</th>
+                                    <th>24H Changes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="ccpw_icon ccpw_coin_logo"><i class="cc BTC"></i></div>
+                                        <div class="ccpw_coin_info">
+                                           <span class="name">Bitcoin</span>
+                                           <span class="coin_symbol">(BTC)</span>
+                                        </div>
+                                    </td>
+                                    <td class="price">
+                                        <div class="price-value"><i class="fa fa-usd" aria-hidden="true"></i>6855.83</div>
+                                    </td>
+                                    <td><span class="changes up"><i class="fa fa-arrow-up" aria-hidden="true">   </i>  1.68%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="ccpw_icon ccpw_coin_logo"><i class="cc ETH"></i></div>
+                                        <div class="ccpw_coin_info">
+                                           <span class="name">Ethereum</span>
+                                           <span class="coin_symbol">(ETH)</span>
+                                        </div>
+                                    </td>
+                                    <td class="price">
+                                        <div class="price-value"><i class="fa fa-usd" aria-hidden="true"></i>     416.979</div>
+                                    </td>
+                                    <td><span class="changes up"><i class="fa fa-arrow-up" aria-hidden="true">   </i>  5.1%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="ccpw_icon ccpw_coin_logo"><i class="cc LTC"></i></div>
+                                        <div class="ccpw_coin_info">
+                                           <span class="name">Litecoin</span>
+                                           <span class="coin_symbol">(LTC)</span>
+                                        </div>
+                                    </td>
+                                    <td class="price">
+                                        <div class="price-value"><i class="fa fa-usd" aria-hidden="true"></i>     114.335</div>
+                                    </td>
+                                    <td><span class="changes up"><i class="fa fa-arrow-up" aria-hidden="true">   </i>  0.71%</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="spacer_40"></div>
+                    <div class="spacer_40"></div>
+
+                    <div class="clearfix"></div>
+                    {% include "@Core/Default/social.html.twig" %}
+{% endblock body %}
+
