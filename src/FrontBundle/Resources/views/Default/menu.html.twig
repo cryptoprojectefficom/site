@@ -1,11 +1,16 @@
-
+<h1 class="logo">
+    <a href="{{ path('homepage') }}">
+        <img src="/bundles/front/assets/images/Vector-Smart-Object1.png" alt="Crypt'Ex" />
+    </a>
+</h1>
+</div>
 <!-- NAV MENU -->
 <div id="navbar" class="navbar-collapse collapse col-md-10">
     <div class="menu nav navbar-nav pull-right nav-effect nav-menu">
         <div class="menu-one-page-container">
             <ul id="menu-one-page" class="menu">
 
-                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ path('homepage') }}">Home</a></li>
+                <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ path('homepage') }}">Home</a></li> -->
                 <li class="homepages-badge menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children">
                     <a href="#">Crypto</a>
                     <ul class="sub-menu">
@@ -16,18 +21,10 @@
                 </li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ path('default_blockchain') }}">Blockchain</a></li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ path('default_histoire_crypto') }}">Histoire de la Crypto</a></li>
-               
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ path('default_crypto_eco') }}">La Crypto et l'Economie</a></li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#to_roadmap">Mon Compte</a></li>
-                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#to_team">Team</a></li>
-                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#to_testimonial">Testimonial</a></li>
-
-                <ul class="sub-menu">
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a href="blog.html">Blog V1</a></li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="blog1.html">Blog V2</a></li>
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="blog-single.html">Single Blog Page</a></li>
-                </ul>
-                </li>
-                <li class="to_whitepaper menu-item menu-item-type-custom menu-item-object-custom"><a target="_blank" href="../Whitepaper.pdf">Whitepaper</a></li>
+                
+                <li class="to_whitepaper menu-item menu-item-type-custom menu-item-object-custom"><a href="{{ path('fos_user_security_login') }}">Connexion</a></li>
             </ul>
         </div>
     </div>

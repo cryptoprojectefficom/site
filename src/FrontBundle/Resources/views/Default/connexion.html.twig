@@ -1,0 +1,37 @@
+{% extends "@Core/Default/layout.html.twig" %}
+{% block body %}
+
+<div class="form-body" class="container-fluid">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                      <div class="website-logo-inside">
+                        <a href="index.html">
+                            <div class="logo">
+                                <img class="logo-size" src="assets_login/images/logo-light.svg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <h3>Crypt'Ex</h3>
+                    <p>Plateforme d'actualités sur la crypto monnaie</p>
+                    <div class="page-links">
+                        <a href="login14.html" class="active">Connexion</a><a href="register14.html">Inscription</a>
+                    </div>
+                    <form>
+                        <input class="form-control" type="text" name="username" placeholder="Adresse Mail" required>
+                        <input class="form-control" type="password" name="password" placeholder="Mot de passe" required>
+                        <div class="form-button">
+                            <button id="submit" type="submit" class="ibtn">Connexion</button>
+                        </div>
+                    </form>
+                    <div class="other-links">
+                        <span>Suivez nous sur :</span><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-google"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   
+{% endblock body %}

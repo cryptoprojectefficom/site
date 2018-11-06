@@ -115,10 +115,22 @@ class DefaultController extends Controller
 
     /**
      * @Route("/histoire_crypto", name="default_histoire_crypto")
+     * 
      */
 
      public function show_hist_crypto(){
          
         return $this->render('@Front/Default/histoire_crypto.html.twig');
      }
+
+     /**
+      * @Route("/crypto_eco", name="default_crypto_eco")
+      *
+      */
+
+      public function show_crypto_eco(){
+          
+          return $this->render('@Front/Default/crypto_eco.html.twig');
+      }
+
 }
