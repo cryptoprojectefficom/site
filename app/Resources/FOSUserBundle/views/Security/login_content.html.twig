@@ -1,9 +1,9 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-    <link rel="stylesheet" type="text/css" href="/bundles/Core/assets_login/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/bundles/Core/assets_login/css/fontawesome-all.min.css">
-    <link rel="stylesheet" type="text/css" href="/bundles/Core/assets_login/css/iofrm-style.css">
-    <link rel="stylesheet" type="text/css" href="/bundles/Core/assets_login/css/iofrm-theme14.css">
+    <link rel="stylesheet" type="text/css" href="/bundles/core/assets_login/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bundles/core/assets_login/css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="/bundles/core/assets_login/css/iofrm-style.css">
+    <link rel="stylesheet" type="text/css" href="/bundles/core/assets_login/css/iofrm-theme14.css">
 
 {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -25,13 +25,24 @@
                         <div class="page-links">
                             <a href="{{ path('fos_user_security_login') }}" class="active">Connexion</a><a href="{{ path('fos_user_registration_register') }}">Inscription</a>
                         </div>
-                        <form>
-                            <input class="form-control" type="text" name="username" placeholder="Adresse Mail" required>
-                            <input class="form-control" type="password" name="password" placeholder="Mot de passe" required>
+                        <form action="{{ path("fos_user_security_check") }}" method="post">
+                            {% if csrf_token %}
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                            {% endif %}
+
+                            <label for="username">{{ 'security.login.username'|trans }}</label>
+                            <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+
+                            <label for="password">{{ 'security.login.password'|trans }}</label>
+                            <input class="form-control" type="password" id="password" name="_password" required="required" autocomplete="current-password" />
+
+                            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                            <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
                             <div class="form-button">
-                                <button id="submit" type="submit" class="ibtn">Connexion</button>
+                                <input type="submit" id="_submit" class="ibtn" name="_submit" value="{{ 'security.login.submit'|trans }}" />
                             </div>
                         </form>
+
                         <div class="other-links">
                             <span>Suivez nous sur :</span><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-google"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a>
                         </div>

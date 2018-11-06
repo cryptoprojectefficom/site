@@ -1,9 +1,9 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-    <link rel="stylesheet" type="text/css" href="/bundles/Core/assets_login/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/bundles/Core/assets_login/css/fontawesome-all.min.css">
-    <link rel="stylesheet" type="text/css" href="/bundles/Core/assets_login/css/iofrm-style.css">
-    <link rel="stylesheet" type="text/css" href="/bundles/Core/assets_login/css/iofrm-theme14.css">
+    <link rel="stylesheet" type="text/css" href="/bundles/core/assets_login/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bundles/core/assets_login/css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="/bundles/core/assets_login/css/iofrm-style.css">
+    <link rel="stylesheet" type="text/css" href="/bundles/core/assets_login/css/iofrm-theme14.css">
 
     <div class="form-body" class="container-fluid">
         <div class="row">
@@ -19,12 +19,13 @@
                         </div>
                         <p>Plateforme d'actualités sur la crypto monnaie</p>
                         <div class="page-links">
-                            <a href="{{ path('fos_user_security_login') }}" class="active">Connexion</a><a href="{{ path('fos_user_registration_register') }}">Inscription</a>
+                            <a href="{{ path('fos_user_security_login') }}">Connexion</a><a href="{{ path('fos_user_registration_register') }}" class="active">Inscription</a>
                         </div>
                         {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
                             {{ form_widget(form) }}
-                            <div>
-                                <input type="submit" value="{{ 'registration.submit'|trans }}" />
+                            {{dump(form)}}
+                            <div class="form-button">
+                                <button id="submit" type="submit" class="ibtn">{{ 'registration.submit'|trans }}</button>
                             </div>
                         {{ form_end(form) }}
                         <div class="other-links">
