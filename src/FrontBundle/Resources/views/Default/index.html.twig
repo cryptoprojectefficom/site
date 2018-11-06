@@ -1,6 +1,7 @@
 {% extends "@Core/Default/layout.html.twig" %}
 
 {% block body %}
+    {{ app.user }}
     <!-- Page content -->
     <div class="no-padding content-area no-sidebar" id="primary">
         <div class="container-fluid">
@@ -8,7 +9,7 @@
                 <div class="entry-content">
                     <!-- Section1 - BitWallet One Page -->
                     <div class="clearfix"></div>
-                        <div id="to_initial" class="padding_top-80 cryptic_one_page data_background" data-background="/bundles/front/assets/images/background.png">
+                        <div id="to_initial" class="padding_top-80 cryptic_one_page data_background" data-background="/bundles/front/assets/images/background-2.png">
                             <div class="padding_80 text-center">
                                 <div class="container">
                                     <div class="row vc_row-has-fill">
@@ -1091,12 +1092,6 @@
             </div>
         </div>
     </div>
-
-    <!-- BEGIN: FLOATING SOCIAL BUTTON -->
-    <a data-toggle="tooltip" data-placement="top" title="Connect on Telegram" class="floating-social-btn" target="_blank" href="http://telegram.org/">
-        <i class="fa fa-telegram"></i>
-    </a>
-    <!-- END: FLOATING SOCIAL BUTTON -->
 
 
     <!-- BACK TO TOP BUTTON -->
