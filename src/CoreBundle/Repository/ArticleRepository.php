@@ -51,12 +51,12 @@ class ArticleRepository extends EntityRepository
 
 
     $qb
-      ->leftJoin('a.comments','c')
-      ->leftJoin('c.user','u')
-      ->addSelect('c')
-      ->addSelect('u')
-      ->where('a.id = :id')
-      ->setParameter('id', $articleId)
+        ->leftJoin('a.image', 'i')
+        ->leftJoin('a.categories', 'c')
+        ->addSelect('c')
+        ->addSelect('i')
+        ->where('a.id = :id')
+        ->setParameter('id', $articleId)
       ;
 
       return $qb->getQuery()->getSingleResult();
