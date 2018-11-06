@@ -1,0 +1,343 @@
+
+{% extends '@Core/Default/layout.html.twig' %}
+
+{% block body %}
+<!-- HEADER TITLE BREADCRUBS SECTION -->
+<div class="clearfix"></div>
+<div class="header-title-breadcrumb relative">
+    <div class="header-title-breadcrumb-overlay text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-sm-6 col-xs-6 text-left">
+                    <h1>Bitcoin</h1>
+                </div>
+                <div class="col-md-5 col-sm-6 col-xs-6">
+                    <ol class="breadcrumb text-right">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Bitcoin</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page content -->
+<div class="one-page-blog">
+    <div class="container padding_80">
+        <div class="row">
+            <div class="col-md-9 main-content">
+                <div class="article-header">
+                    <div class="article-details">
+                        <img src="{{ asset(articleContent.image.webPath) }}" alt="">
+
+                        <div class="clearfix"></div>
+                        <h1 class="post-title text-white">
+                            <strong>{{ articleContent.title }}</strong>
+                        </h1>
+                        <div class="post-category-comment-date row">
+                            <span class="post-date"><i class="icon-calendar"></i>{{ articleContent.date|date("d/m/Y") }}</span>
+                            <span class="post-categories">
+                                        <i class="icon-tag"></i>
+                                        {% for categorie in articleContent.categories %}
+                                            <a href="#" rel="tag">{{ categorie.name }}</a>{%  if (articleContent.categories|length) > 1 %} - {% endif %}
+                                        {% endfor %}
+
+                                    </span>
+                            <span class="post-author">
+                                        <i class="icon-user icons"></i>
+                                        <a href="#">{{ articleContent.author }}</a>
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- CONTENT -->
+                <div class="article-content">
+                    <p style="color:white">
+                    {{articleContent.content}}
+                    </p>
+                </div>
+                <!-- Cryptocurrency List Widget -->
+                <h3 class="text-bold text-white">Listes des crypto-monnaies</h3>
+                <div class="ccpw-widget">
+                    <table class="ccpw_table table-blog-affiliate">
+                        <thead>
+                        <tr>
+                            <th>Crypto-monnaie</th>
+                            <th>Prix</th>
+                            <th>24H Changes</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div class="ccpw_icon ccpw_coin_logo"><i class="cc BTC"></i></div>
+                                <div class="ccpw_coin_info">
+                                    <span class="name">Bitcoin</span>
+                                    <span class="coin_symbol">(BTC)</span>
+                                </div>
+                            </td>
+                            <td class="price">
+                                <div class="price-value"><i class="fa fa-usd" aria-hidden="true"></i>6855.83</div>
+                            </td>
+                            <td><span class="changes up"><i class="fa fa-arrow-up" aria-hidden="true">   </i>  1.68%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="ccpw_icon ccpw_coin_logo"><i class="cc ETH"></i></div>
+                                <div class="ccpw_coin_info">
+                                    <span class="name">Ethereum</span>
+                                    <span class="coin_symbol">(ETH)</span>
+                                </div>
+                            </td>
+                            <td class="price">
+                                <div class="price-value"><i class="fa fa-usd" aria-hidden="true"></i>     416.979</div>
+                            </td>
+                            <td><span class="changes up"><i class="fa fa-arrow-up" aria-hidden="true">   </i>  5.1%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="ccpw_icon ccpw_coin_logo"><i class="cc LTC"></i></div>
+                                <div class="ccpw_coin_info">
+                                    <span class="name">Litecoin</span>
+                                    <span class="coin_symbol">(LTC)</span>
+                                </div>
+                            </td>
+                            <td class="price">
+                                <div class="price-value"><i class="fa fa-usd" aria-hidden="true"></i>     114.335</div>
+                            </td>
+                            <td><span class="changes up"><i class="fa fa-arrow-up" aria-hidden="true">   </i>  0.71%</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="spacer_40"></div>
+                <div class="spacer_40"></div>
+
+                <div class="clearfix"></div>
+                <!-- Social links -->
+                <div class="article-social">
+                    <ul class="social-sharer">
+                        <li class="facebook">
+                            <a data-toggle="tooltip" title="Share on Facebook" data-placement="top" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="twitter">
+                            <a data-toggle="tooltip" title="Tweet on Twitter" data-placement="top" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="google-plus">
+                            <a data-toggle="tooltip" title="Share on G+" data-placement="top" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="pinterest">
+                            <a data-toggle="tooltip" title="Pin on Pinterest" data-placement="top" href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="linkedin">
+                            <a data-toggle="tooltip" title="Share on LinkedIn" data-placement="top" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="reddit">
+                            <a data-toggle="tooltip" title="Share on Reddit" data-placement="top" href="#"><i class="fa fa-reddit" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="tumblr">
+                            <a data-toggle="tooltip" title="Share on Tumblr" data-placement="top" href="#"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+
+                <!-- COMMENTS -->
+                <div class="comments-area">
+                    <div class="comment-respond">
+                        <h3 class="comment-reply-title text-white">Laisse un commentaire<small><a rel="nofollow" id="cancel-comment-reply-link" class="js-action" href="#"   style="display:none;">Cancel reply</a></small></h3>
+                        <form action="#" method="post" class="comment-form" novalidate>
+                            <p class="comment-notes"></p>
+                            <div class=" form-comment">
+                                <p class="comment-form-author relative ">
+                                    <textarea cols="45" rows="5" aria-required="true" placeholder="Votre commentaire..." name="comment"></textarea>
+                                </p>
+                            </div>
+                            <div class="row form-fields">
+                                <p class="comment-form-author relative col-md-4">
+                                    <input class="focus-me" placeholder="Votre nom..." name="author" type="text" value="" size="30" />
+                                    <i class="icon-user absolute"></i>
+                                </p>
+                                <p class="comment-form-author relative col-md-4">
+                                    <input class="focus-me" placeholder="Votre email..." name="email" type="text" value="" size="30" />
+                                    <i class="icon-envelope absolute"></i>
+                                </p>
+                                <p class="comment-form-author relative col-md-4">
+                                    <input class="focus-me" placeholder="Votre site..." name="url" type="text" value="" size="30" />
+                                    <i class="icon-globe absolute"></i>
+                                </p>
+                            </div>
+                            <p class="form-submit">
+                                <input name="submit" type="submit" class="submit" value="Ajouter le commentaire" />
+                                <input type='hidden' name='comment_post_ID'  value   = '329' />
+                                <input type='hidden' name='comment_parent' value='0' />
+                            </p>
+                        </form>
+                    </div>
+                    <!-- #respond -->
+                </div>
+            </div>
+            <div class="col-md-3 sidebar-content">
+                <!-- <aside class="widget widget_search">
+                   <form role="search" method="get" class="search-form" action="#">
+                      <label>
+                      <span class="screen-reader-text">Search for:</span>
+                      <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+                      </label>
+                      <input type="submit" class="search-submit" value="Search" />
+                   </form>
+                </aside> -->
+                <aside class="widget widget_text">
+                    <h1 class="widget-title">Crypto</h1>
+                    <div class="textwidget">
+                        <div class="ccpw-widget">
+                            <table class="ccpw_table" style="border:none!important;">
+                                <thead>
+                                <tr>
+                                    <th>Crypto-monnaie</th>
+                                    <th>Prix</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="ccpw_icon ccpw_coin_logo"><i class="cc BTC"></i></div>
+                                        <div class="ccpw_coin_info">
+                                            <span class="name">Bitcoin</span><br />
+                                            <span class="coin_symbol">(BTC)</span>
+                                        </div>
+                                    </td>
+                                    <td class="price">
+                                        <div class="price-value"><i class="fa fa-usd" aria-hidden="true"></i>6855.83</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="ccpw_icon ccpw_coin_logo"><i class="cc ETH"></i></div>
+                                        <div class="ccpw_coin_info">
+                                            <span class="name">Ethereum</span><br />
+                                            <span class="coin_symbol">(ETH)</span>
+                                        </div>
+                                    </td>
+                                    <td class="price">
+                                        <div class="price-value"><i class="fa fa-usd" aria-hidden="true"></i>416.979</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="ccpw_icon ccpw_coin_logo"><i class="cc LTC"></i></div>
+                                        <div class="ccpw_coin_info">
+                                            <span class="name">Litecoin</span><br />
+                                            <span class="coin_symbol">(LTC)</span>
+                                        </div>
+                                    </td>
+                                    <td class="price">
+                                        <div class="price-value"><i class="fa fa-usd" aria-hidden="true"></i>114.335</div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </aside>
+                <!-- TradingView Widget BEGIN -->
+            </div>
+        </div>
+    </div>
+    <!-- <div class="post-details-bottom">
+        <div class="container">
+            <div class="related-posts sticky-posts no-margin">
+                <h2 class="heading-bottom no-margin text-white">Related Posts</h2>
+                <div class="spacer_15"></div>
+                <div class="clearfix"></div>
+                <div class="row">
+                    <div class="col-md-4 post">
+                        <div class="related_blog_custom">
+                            <a href="#" class="relative">
+                                <img src="assets/images/video-image-500x300.jpg" class="img-responsive" alt="What is Bitcoin Mining" />
+                            </a>
+                            <div class="related_blog_details">
+                                <h4 class="post-name"><a href="#">What is Bitcoin Mining</a></h4>
+                                <div class="post-author">Posted by <a href="#">Robert Downey</a> - January 8, 2018</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 post">
+                        <div class="related_blog_custom">
+                            <a href="#" class="relative">
+                                <img src="assets/images/bitcurrency_theme-3-500x300.jpg" class="img-responsive" alt="Bitcoin vs Ethereum" />
+                            </a>
+                            <div class="related_blog_details">
+                                <h4 class="post-name"><a href="#">Bitcoin vs Ethereum</a></h4>
+                                <div class="post-author">Posted by <a href="#">Robert Downey</a> - January 8, 2018</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 post">
+                        <div class="related_blog_custom">
+                            <a href="#" class="relative">
+                                <img src="assets/images/bitcurrency_theme-2-500x300.jpg" class="img-responsive" alt="The Government versus Bitcoin" />
+                            </a>
+                            <div class="related_blog_details">
+                                <h4 class="post-name"><a href="#">The Government versus Bitcoin</a></h4>
+                                <div class="post-author">Posted by <a href="#">Maxence</a> - November 5, 2018</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="prev-next-post">
+                <div class="col-md-12 next-post">
+                    <a href="#" class="preview-post">
+                        <i class="icon-arrow-left-circle"></i> <span>Previous Post</span>
+                    </a>
+
+                    <a href="#" class="float-right">
+                        <span>Next Post</span> <i class="icon-arrow-right-circle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+    <!-- BACK TO TOP BUTTON -->
+    <a class="back-to-top-one-page back-to-top modeltheme-is-visible modeltheme-fade-out" href="#0">
+        <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+    </a>
+
+    <!-- TICKERS DARK -->
+    <div class="tickers-black-sm crypto-ticker">
+        <ul id="webticker-dark-icons">
+            <li data-update="item1"><i class="cc BTC"></i> BTC <span class="coin-value"> $11.039232</span></li>
+            <li data-update="item2"><i class="cc ETH"></i> ETH <span class="coin-value"> $1.2792</span></li>
+            <li data-update="item7"><i class="cc LTC"></i> LIT <span class="coin-value"> $177.80</span></li>
+        </ul>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <!-- FOOTER BOTTOM -->
+        <div class="footer-div-parent cryptic-footer-one-page">
+            <div class="container-fluid footer">
+                <div class="col-md-12">
+                    <p class="copyright text-center">
+                        <a href="#"></a> by . 2018 All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="spacer_40"></div>
+</div><!-- end HEADER -->
+<!-- JS SCRIPTS -->
+{% endblock body %}
