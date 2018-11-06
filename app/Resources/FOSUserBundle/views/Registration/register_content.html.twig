@@ -1,0 +1,38 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+    <link rel="stylesheet" type="text/css" href="/bundles/Core/assets_login/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bundles/Core/assets_login/css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="/bundles/Core/assets_login/css/iofrm-style.css">
+    <link rel="stylesheet" type="text/css" href="/bundles/Core/assets_login/css/iofrm-theme14.css">
+
+    <div class="form-body" class="container-fluid">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                          <div class="website-logo-inside">
+                            <a href="{{ path('homepage') }}">
+                                <div class="logo">
+                                    <img class="logo-size" src="assets_login/images/logo-light.svg" alt="Crypt'Ex">
+                                </div>
+                            </a>
+                        </div>
+                        <p>Plateforme d'actualités sur la crypto monnaie</p>
+                        <div class="page-links">
+                            <a href="{{ path('fos_user_security_login') }}" class="active">Connexion</a><a href="{{ path('fos_user_registration_register') }}">Inscription</a>
+                        </div>
+                        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                            {{ form_widget(form) }}
+                            <div>
+                                <input type="submit" value="{{ 'registration.submit'|trans }}" />
+                            </div>
+                        {{ form_end(form) }}
+                        <div class="other-links">
+                            <span>Suivez nous sur :</span><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-google"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
