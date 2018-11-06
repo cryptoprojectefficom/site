@@ -32,7 +32,7 @@
                         <p>Praesent et tincidunt magna, eget consectetur nunc. Ut vestibulum cursus eros eu pulvinar. Maecenas sagittis odio sit amet lorem pharetra, quis iaculis diam molestie. Sed eros felis, consectetur quis tellus quis, molestie fringilla nunc. Cras volutpat, dolor sodales tincidunt finibus, purus magna lacinia lorem, ullamcorper hendrerit urna tellus at lorem.</p>
                     </div>
                     <!-- Cryptocurrency List Widget -->
-                    <h3 class="text-bold text-white">Listes des crypto-monnaies</h3>
+                    <h3 class="text-bold text-white">Cour du BitCoin</h3>
                     <div class="ccpw-widget">
                         <table class="ccpw_table table-blog-affiliate">
                             <thead>
@@ -52,37 +52,14 @@
                                         </div>
                                     </td>
                                     <td class="price">
-                                        <div class="price-value"><i class="fa fa-usd" aria-hidden="true"></i>6855.83</div>
+                                        <div class="price-value">{{BTCInfo}} <i class="fa fa-eur" aria-hidden="true"></i></div>
                                     </td>
-                                    <td><span class="changes up"><i class="fa fa-arrow-up" aria-hidden="true">   </i>  1.68%</span>
-                                    </td>
-                                </tr>
-                                <tr>
+
                                     <td>
-                                        <div class="ccpw_icon ccpw_coin_logo"><i class="cc ETH"></i></div>
-                                        <div class="ccpw_coin_info">
-                                           <span class="name">Ethereum</span>
-                                           <span class="coin_symbol">(ETH)</span>
-                                        </div>
-                                    </td>
-                                    <td class="price">
-                                        <div class="price-value"><i class="fa fa-usd" aria-hidden="true"></i>     416.979</div>
-                                    </td>
-                                    <td><span class="changes up"><i class="fa fa-arrow-up" aria-hidden="true">   </i>  5.1%</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="ccpw_icon ccpw_coin_logo"><i class="cc LTC"></i></div>
-                                        <div class="ccpw_coin_info">
-                                           <span class="name">Litecoin</span>
-                                           <span class="coin_symbol">(LTC)</span>
-                                        </div>
-                                    </td>
-                                    <td class="price">
-                                        <div class="price-value"><i class="fa fa-usd" aria-hidden="true"></i>     114.335</div>
-                                    </td>
-                                    <td><span class="changes up"><i class="fa fa-arrow-up" aria-hidden="true">   </i>  0.71%</span>
+                                        {% if BTCRate > 0 %}<span class="changes up"><i class="fa fa-arrow-up" aria-hidden="true">   </i>  {{BTCRate|round(2)}}%</span>
+                                        {% else %}
+                                        <span class="changes up" style="color: red;"><i class="fa fa-arrow-down" aria-hidden="true">   </i>  {{BTCRate|round(2)}}%</span>
+                                        {% endif %}
                                     </td>
                                 </tr>
                             </tbody>

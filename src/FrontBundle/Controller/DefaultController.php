@@ -8,7 +8,8 @@ use CoreBundle\Entity\User;
 
 use CoreBundle\Form\CommentType;
 
-use Symfony\Component\HttpFoundation\Request;
+use Unirest\Request;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,7 +20,7 @@ class DefaultController extends Controller
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -40,7 +41,20 @@ class DefaultController extends Controller
 
      public function show_bitcoin(){
 
-        return $this->render('@Front/Default/bitcoin.html.twig');
+        $date = new \DateTime;
+        $yesterday = $date->modify('-1 days')->format('Y-m-d\TH:i:s\Z');
+
+        $headers = array('Accept' => 'application/json', 'X-CoinAPI-Key' => '044A1C06-AFE6-4EF3-9223-0363770C3E25');
+                
+        $responseValYest = Request::get('https://rest.coinapi.io/v1/exchangerate/BTC/EUR?time='.$yesterday,$headers);
+        $responseNow = Request::get('https://rest.coinapi.io/v1/exchangerate/BTC/EUR',$headers);
+
+
+        $valLast = round($responseValYest->body->rate, 2);
+        $newVal = round($responseNow->body->rate, 2);
+        $rateChange = (($newVal - $valLast) / $newVal)*100;
+
+        return $this->render('@Front/Default/bitcoin.html.twig', ['BTCInfo' => $newVal, 'BTCRate' => $rateChange]);
      }
 
      
@@ -49,8 +63,21 @@ class DefaultController extends Controller
      */
 
     public function show_litecoin(){
+        $date = new \DateTime;
+        $yesterday = $date->modify('-1 days')->format('Y-m-d\TH:i:s\Z');
 
-        return $this->render('@Front/Default/litecoin.html.twig');
+        $headers = array('Accept' => 'application/json', 'X-CoinAPI-Key' => '044A1C06-AFE6-4EF3-9223-0363770C3E25');
+                
+        $responseValYest = Request::get('https://rest.coinapi.io/v1/exchangerate/LTC/EUR?time='.$yesterday,$headers);
+        $responseNow = Request::get('https://rest.coinapi.io/v1/exchangerate/LTC/EUR',$headers);
+
+
+        $valLast = round($responseValYest->body->rate, 2);
+        $newVal = round($responseNow->body->rate, 2);
+        $rateChange = (($newVal - $valLast) / $newVal)*100;
+
+
+        return $this->render('@Front/Default/litecoin.html.twig', ['LTCInfo' => $newVal, 'LTCRate' => $rateChange]);
      }
 
      
@@ -60,7 +87,20 @@ class DefaultController extends Controller
 
     public function show_ethereum(){
 
-        return $this->render('@Front/Default/ethereum.html.twig');
+        $date = new \DateTime;
+        $yesterday = $date->modify('-1 days')->format('Y-m-d\TH:i:s\Z');
+
+        $headers = array('Accept' => 'application/json', 'X-CoinAPI-Key' => '044A1C06-AFE6-4EF3-9223-0363770C3E25');
+                
+        $responseValYest = Request::get('https://rest.coinapi.io/v1/exchangerate/ETH/EUR?time='.$yesterday,$headers);
+        $responseNow = Request::get('https://rest.coinapi.io/v1/exchangerate/ETH/EUR',$headers);
+
+
+        $valLast = round($responseValYest->body->rate, 2);
+        $newVal = round($responseNow->body->rate, 2);
+        $rateChange = (($newVal - $valLast) / $newVal)*100;
+
+        return $this->render('@Front/Default/ethereum.html.twig', ['ETHInfo' => $newVal, 'ETHRate' => $rateChange]);
      }
 
      /**
