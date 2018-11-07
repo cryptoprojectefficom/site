@@ -7170,7 +7170,7 @@ header .love-it-wrapper {
 }
 #navbar .sub-menu,
 .navbar ul li ul.sub-menu {
-    background: none repeat scroll 0 0 #f5f5f5;
+    background: none repeat scroll 0 0 rgba(0,0,0,0) !important;
     border-top: 0 none;
     left: 0px;
     opacity: 0;

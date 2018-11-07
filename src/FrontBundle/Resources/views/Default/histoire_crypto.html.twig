@@ -1,5 +1,35 @@
 {% extends "@Core/Default/layout.html.twig" %}
 {% block body %}
-
+<!-- Section1 - BitWallet One Page -->
+<div class="clearfix"></div>
+<div id="to_initial" class="padding_top-80 cryptic_one_page data_background" data-background="/bundles/front/assets/images/background-2.png">
+    <div class="padding_80 text-center">
+        <div class="container">
+            <div class="row vc_row-has-fill">
+                <div class="spacer_80"></div>
+                <div class="col-sm-9 col-md-6">
+                    <h1 class="wow fadeInDown wpb_start_animation">Landing Page for<br /> Initial Coin Offering</h1>
+                    <h3 class="wow fadeInDown wpb_start_animation">Minimum purchase is 50 Coins tokens. Get a bonus<br /> from 5% to 25% on every token purchase</h3>
+                    <h2 class="wow fadeInDown wpb_start_animation">SECOND STEP CLOSING IN</h2>
+                  
+                    <div class="spacer_30"></div>
+                    <div class="text-right bitwallet-btn modeltheme_button wow fadeInLeft wpb_start_animation">
+                        <a href="{{ path('fos_user_security_login') }}" class="button-winona btn btn-medium btn_custom_blue_grad">Connexion</a>
+                    </div>
+                    <div class="text-left bitwallet-btn modeltheme_button wow fadeInLeft wpb_start_animation">
+                        <a href="{{ path('fos_user_registration_register') }}" class="button-winona btn btn-medium btn_to_whitepaper">Inscription</a>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="vc_column-inner ">
+                        <div class="wpb_wrapper"></div>
+                    </div>
+                </div>
+                <div class="spacer_80"></div>
+                <div class="spacer_80"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock body %}
