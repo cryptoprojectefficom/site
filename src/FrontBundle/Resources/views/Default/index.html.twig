@@ -9,15 +9,17 @@
                 <div class="entry-content">
                     <!-- Section1 - BitWallet One Page -->
                     <div class="clearfix"></div>
-                        <div id="to_initial" class="padding_top-80 cryptic_one_page data_background" data-background="/bundles/front/assets/images/background-2.png">
+                        <div id="to_initial" class="padding_top-80 cryptic_one_page data_background" style="background-size: 50%;" data-background="/bundles/front/assets/images/cyptex.gif">
                             <div class="padding_80 text-center">
                                 <div class="container">
                                     <div class="row vc_row-has-fill">
                                         <div class="spacer_80"></div>
                                         <div class="col-sm-9 col-md-6">
-                                            <h1 class="wow fadeInDown wpb_start_animation">Landing Page for<br /> Initial Coin Offering</h1>
-                                            <h3 class="wow fadeInDown wpb_start_animation">Minimum purchase is 50 Coins tokens. Get a bonus<br /> from 5% to 25% on every token purchase</h3>
-                                            <h2 class="wow fadeInDown wpb_start_animation">SECOND STEP CLOSING IN</h2>
+                                            <h1 class="wow fadeInDown wpb_start_animation">La crypto monnaie<br /> pour les entreprises</h1>
+                                            <h3 class="wow fadeInDown wpb_start_animation">Pourquoi est-ce la monnaie de l'avenir ? <br/>
+                                                Les avantages et inconvénients pour une entreprise</h3>
+                                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") == false %}
+                                            <h2 class="wow fadeInDown wpb_start_animation">REJOINS LE BLOG</h2>
                                           
                                             <div class="spacer_30"></div>
                                             <div class="text-right bitwallet-btn modeltheme_button wow fadeInLeft wpb_start_animation">
@@ -26,6 +28,7 @@
                                             <div class="text-left bitwallet-btn modeltheme_button wow fadeInLeft wpb_start_animation">
                                                 <a href="{{ path('fos_user_registration_register') }}" class="button-winona btn btn-medium btn_to_whitepaper">Inscription</a>
                                             </div>
+                                            {% endif %}
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="vc_column-inner ">
@@ -38,246 +41,28 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="text-align:center; background-color:rgb(22,17,84);">
-                            <img border="0" width="75%" src="/bundles/front/assets/images/cyptex.gif" alt="Animation Cryptex">
-                        </div>
-                        </div>
-            
-                       
-                    <!-- Section2 - BitWallet Token sale stats -->
-                    <div class="clearfix"></div>
-                        <div id="to_token_sale" class="padding_top-80 text_center page-fill">
-                            <div class="container">
-                                <div class="title-subtile-holder wow fadeIn text_center">
-                                    <h1 class="section-title light_title no-margin">Token sale stats</h1>
-                                    <div class="spacer_10"></div>
-                                    <div class="clearfix"></div>
-                                    <div class="section-border green_border no-margin"></div>
-                                    <div class="spacer_10"></div>
-                                    <div class="section-subtitle light_subtitle">Duis aute irure dolor in reprehenderit in voluptate velit esse <br /> cillum dolore eu fugiat nulla pariatur.</div>
-                                </div>
-                                <div class="spacer_80"></div>
-                                <div class="clearfix"></div>
-                                <div class="row decentralized-total-contribution decentralized-total-contribution-1">
-                                    <div class="col-sm-4">
-                                        <h2 class="decentralized-h2-total wow fadeIn">Total contribution:</h2>
-                                        <h2 class="decentralized-h2-amount wow fadeIn">14,831,449 USD</h2>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <div class="spacer_10"></div>
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix">
-                                                    <i class="fa fa-bullseye icon-bullseye-decentralized"></i>
-                                                </div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white">
-                                                <span class="name">Dash: </span>
-                                                <span class="value ">$423.45</span>
-                                            </p>
-                                        </div>
-                                        <div class="spacer_10"></div>
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix">
-                                                    <i class="fa fa-bullseye icon-bullseye-decentralized "></i>
-                                                </div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white">
-                                                <span class="name">Monero: </span>
-                                                <span class="value ">$219.34</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <div class="spacer_10"></div>
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix">
-                                                    <i class="fa fa-bullseye icon-bullseye-decentralized "></i>
-                                                </div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white">
-                                                <span class="name">Ripple: </span>
-                                                <span class="value ">$0.70</span>
-                                            </p>
-                                        </div>
-                                        <div class="spacer_10"></div>
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix">
-                                                    <i class="fa fa-bullseye icon-bullseye-decentralized "></i>
-                                                </div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white">
-                                                <span class="name">Litecoin: </span>
-                                                <span class="value ">$166.19</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <div class="spacer_10"></div>
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix">
-                                                    <i class="fa fa-bullseye icon-bullseye-decentralized "></i>
-                                                </div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white">
-                                                <span class="name">Tether: </span>
-                                                <span class="value ">$1.00</span>
-                                            </p>
-                                        </div>
-                                        <div class="spacer_10"></div>
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix">
-                                                    <i class="fa fa-bullseye icon-bullseye-decentralized "></i>
-                                                </div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white">
-                                                <span class="name">Bitcoin: </span>
-                                                <span class="value ">$8,533</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <div class="spacer_10"></div>
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix">
-                                                    <i class="fa fa-bullseye icon-bullseye-decentralized "></i>
-                                                </div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white">
-                                                <span class="name">Qtum: </span>
-                                                <span class="value ">$17.98</span>
-                                            </p>
-                                        </div>
-                                        <div class="spacer_10"></div>
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix">
-                                                    <i class="fa fa-bullseye icon-bullseye-decentralized "></i>
-                                                </div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white">
-                                                <span class="name">TRON: </span>
-                                                <span class="value ">$0.0358</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row decentralized-total-contribution">
-                                    <div class="col-sm-6 border-right">
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix"><i  class="fa fa-caret-right icon-caret-decentralized "></i></div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white"><span class="name float-left">Total Contributors</span><span class="value pull-right">7,591</span></p>
-                                        </div>
-                                        <div class="spacer_10"></div>
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix"><i  class="fa fa-caret-right icon-caret-decentralized"></i></div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white"><span class="name float-left">Token Uses</span><span class="value pull-right">Ethereum</span></p>
-                                        </div>
-                                        <div class="spacer_10"></div>
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix"><i class="fa fa-caret-right  icon-caret-decentralized"></i></div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white"><span class="name float-left">Token Standart</span><span class="value pull-right">ERC20</span></p>
-                                        </div>
-                                        <div class="spacer_10"></div>
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix"><i class="fa fa-caret-right icon-caret-decentralized"></i></div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white"><span class="name float-left">Token Name</span><span class="value pull-right">BITWALLET</span></p>
-                                        </div>
-                                        <div class="spacer_10"></div>
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix"><i class="fa fa-caret-right icon-caret-decentralized"></i></div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white"><span class="name float-left">Token Sumbol</span><span class="value pull-right">CRP</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 padding_left_50">
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix"><i class="fa fa-caret-right icon-caret-decentralized"></i></div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white"><span class="name float-left">Average Contribution</span><span class="value pull-right">$1,128 / Contributor</span></p>
-                                        </div>
-                                        <div class="spacer_10"></div>
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix"><i class="fa fa-caret-right icon-caret-decentralized"></i></div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white"><span class="name float-left">Number of Transactions</span><span class="value pull-right">8,432</span></p>
-                                        </div>
-                                        <div class="spacer_10"></div>
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix"><i class="fa fa-caret-right icon-caret-decentralized"></i></div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white"><span class="name float-left">Countries Participated</span><span class="value pull-right">84</span></p>
-                                        </div>
-                                        <div class="spacer_10"></div>
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix"><i class="fa fa-caret-right icon-caret-decentralized"></i></div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white"><span class="name float-left">Total Tokens Issued</span><span class="value pull-right">105,422,433</span></p>
-                                        </div>
-                                        <div class="spacer_10"></div>
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix"><i class="fa fa-caret-right icon-caret-decentralized"></i></div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white"><span class="name float-left">Token Sale Jurisdiction</span><span class="value pull-right">Gibraltar</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row decentralized-total-contribution">
-                                    <div class="col-sm-3">
-                                        <div class="mt-icon-list-item mt-parent-icon-list-item wow fadeIn">
-                                            <div class="mt-icon-list-icon-holder">
-                                                <div class="mt-icon-list-icon-holder-inner clearfix"><i class="fa fa-caret-right icon-caret-decentralized"></i></div>
-                                            </div>
-                                            <p class="mt-icon-list-text text-white"><span class="name float-left">Countries Excluded</span><span class="value "></span></p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <div class="fadeIn wow text-left">
-                                            <p>People&#8217;s Republic of China (except for Hong Kong, Macau and Taiwan), South Korea, Cuba, Iran, North Korea, Syria, Crimea Region, Beijing.</p>
-                                        </div>
-                                    </div>
-                                </div>                                                                
-                            </div>                            
-                        </div>
-
-
+                    </div>
                     <!-- Section3 - BitWallet onBlockchain -->
                     <div class="clearfix"></div>
                     <div id="to_products" class="padding_top-80 text_center page-fill">
-                        <div class="container">
+                        <div class="container desktop-padding" style="background-color: rgba(255, 255, 255, 1); width: 100%;">
                             <div class="row vc_row-has-fill">
                                 <div class="col-sm-6">
                                     <div class="title-subtile-holder wow fadeInLeft text_left">
-                                        <h1 class="section-title light_title no-margin">Product based onBlockchain</h1>
+                                        <h1 class="section-title light_title no-margin" style="color: #171055">La cryptomonnaie et l'économie</h1>
                                         <div class="spacer_10"></div>
                                         <div class="clearfix"></div>
                                         <div class="section-border green_border no-margin"></div>
                                         <div class="spacer_10"></div>
-                                        <div class="section-subtitle light_subtitle">Smart contracts are computer programs which allow for the automatic transfer of digital assets between parties based upon pre-specified conditions. Smart contracts are computer programs which allow for the automatic transfer of digital assets between parties based upon pre-specified conditions.</div>
+                                        <div class="section-subtitle light_subtitle" style="width: auto;">
+                                        <p style="color: #171055">
+                                            Elle donne le pouvoir d’émettre de la monnaie (crypto-monnaie) sans passer par des banques, d’effectuer des transactions sans passer par des réseaux de paiement comme VISA, CB, le tout de manière sécurisée et c’est une révolution. Mais le plus important ne se trouve peut être pas là …
+                                        </p>
+                                    </div>
                                     </div>
                                     <div class="spacer_40"></div>
                                     <div class="text-center bitwallet-btn modeltheme_button wow fadeInLeft">
-                                        <a href="#" class="button-winona btn btn-medium btn_custom_blue_grad">WHITEPAPPER</a>
+                                        <a href="#" class="button-winona btn btn-medium btn_custom_blue_grad">EN SAVOIR PLUS</a>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -306,35 +91,39 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="title-subtile-holder wow fadeInRight text_left">
-                                        <h1 class="section-title light_title no-margin">Product based on SMART CONTRACT</h1>
+                                    <div class="title-subtile-holder wow fadeInRight text_left" >
+                                        <h1 class="section-title light_title no-margin" style="color: #171055">L'essor des crypto-monnaies'</h1>
                                         <div class="spacer_10"></div>
                                         <div class="clearfix"></div>
                                         <div class="section-border green_border no-margin"></div>
                                         <div class="spacer_10"></div>
-                                        <div class="section-subtitle light_subtitle">Smart contracts are computer programs which allow for the automatic transfer of digital assets between parties based upon pre-specified conditions. Smart contracts are computer programs which allow for the automatic transfer of digital assets between parties based upon pre-specified conditions.</div>
+                                        <div class="section-subtitle light_subtitle" style="width: auto;">
+                                            <p style="color: #171055; word-wrap: break-word;" >
+                                                Plus de deux tiers (68%) des professionnels du secteur financier considèrent que les grandes entreprises auront de plus en plus recours à la crypto-monnaie. Parmi les raisons invoquées, 68% anticipent que cela sera par l’intermédiaire de smart contracts (protocoles informatiques qui facilitent et exécutent les contrats) et autres technologies blockchain, 54% estiment que c’est un moyen pertinent de levée de fonds, enfin 50% considèrent que cela leur permettra de régler leurs fournisseurs.
+                                            </p>
+                                        </div>
                                     </div>
                                     <div class="spacer_40"></div>
                                     <div class="text-center bitwallet-btn modeltheme_button wow fadeInRight">
-                                        <a href="#" class="button-winona btn btn-medium btn_custom_blue_grad">READ MORE</a>
+                                        <a href="#" class="button-winona btn btn-medium btn_custom_blue_grad">EN SAVOIR PLUS</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Section4 - BitWallet OUR ROADMAP -->
+<!--                     Section4 - BitWallet OUR ROADMAP
                     <div class="clearfix"></div>
                     <div id="to_roadmap" class="cryptic_ico_our_roadmap padding_top-80 text-center page-fill">
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="title-subtile-holder wow  ">
-                                        <h1 class="section-title light_title no-margin">OUR ROADMAP</h1>
+                                        <h1 class="section-title light_title no-margin">DATE IMPORTANTE</h1>
                                         <div class="spacer_10"></div>
                                         <div class="clearfix"></div>
                                         <div class="section-border green_border no-margin"></div>
                                         <div class="spacer_10"></div>
-                                        <div class="section-subtitle light_subtitle">Duis aute irure dolor in reprehenderit in voluptate velit esse <br /> cillum dolore eu fugiat nulla pariatur.</div>
+                                        <div class="section-subtitle light_subtitle">Toutes les dates importantes d'une crypto monnaie principale, le BITCOIN</div>
                                     </div>
                                 </div>
                             </div>
@@ -393,582 +182,45 @@
                                         <p class="text-left">The BitWallet Network was introduced to the public in order to address common downfalls of inoperable medical systems.</p>
                                     </div>
                                 </li>
-                                <li>
-                                    <div><p class="time text-left">June 12, 2017</p>
-                                        <h3 class="text-left">Banking</h3>
-                                        <p class="text-left">Smart contract based management of assets with enhanced security and new investment opportunities</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div><p class="time text-left">November 21, 2017</p>
-                                        <h3 class="text-left">Payment Service</h3>
-                                        <p class="text-left">For payment service and decentralized exchange, demo of profit distribution mechanism on TestNet</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div><p class="time text-left">December 10, 2017</p>
-                                        <h3 class="text-left">Open Source</h3>
-                                        <p class="text-left">The open-source model is a decentralized software-development model that encourages open collaboration</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div><p class="time text-left">January 12, 2018</p>
-                                        <h3 class="text-left">Sign-Up Opens</h3>
-                                        <p class="text-left">Integrate with more blockchain protocols<br /> Release first version of the BitWallet platform<br />
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div><p class="time text-left">February 17, 2018</p>
-                                        <h3 class="text-left">API gateway</h3>
-                                        <p class="text-left">Implement BitWallet's Identity Management System and Smart Contract Authorization System</p>
-                                    </div>
-                                </li>
                             </ol>
-                            <div class="arrows">
-                                <button class="arrow arrow__prev disabled" disabled><i class="fa fa-chevron-left"></i></button>
-                                <button class="arrow arrow__next"><i class="fa fa-chevron-right"></i></button>
-                            </div>
                         </section>
-                    </div>
-                    <!-- Section5 - BitWallet Team Board -->
-                    <div class="clearfix"></div>
-                    <div id="to_team" class="padding_top-80 text_center page-fill">
-                        <div class="container">
-                            <div class="row">
-                                <div class="title-subtile-holder wow fadeIn text_center">
-                                    <h1 class="section-title light_title no-margin">TEAM BOARD</h1>
-                                    <div class="spacer_10"></div>
-                                    <div class="clearfix"></div>
-                                    <div class="section-border green_border no-margin"></div>
-                                    <div class="spacer_10"></div>
-                                    <div class="section-subtitle light_subtitle">Sed ut perspiciatis unde omnis accus antium<br /> sedut pers dolorem ipsum quia dolor sit.</div>
-                                </div>
-                                <div class="spacer_80"></div>
-                                <div class="row mt_members2 mt_slider_members_team1 wow fadeIn">
-                                    <div class="col-md-12 relative">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="members_img_holder">
-                                                    <div class="memeber02-img-holder">
-                                                        <div class="linkedin-profile">
-                                                            <a target="_blank" href="https://www.linkedin.com/" class="member01_profile-linkedin">
-                                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                        <img src="/bundles/front/assets/images/member_filter-1.jpg" alt="Robert Downey" />
-                                                    </div>
-                                                    <div class="member02-content">
-                                                        <div class="member02-content-inside">
-                                                            <h3 class="member02_name text-white">Robert Downey</h3>
-                                                            <h5 class="member02_position">Founder Technology Officer</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 relative">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="members_img_holder">
-                                                    <div class="memeber02-img-holder">
-                                                        <div class="linkedin-profile">
-                                                            <a target="_blank" href="https://www.linkedin.com/" class="member01_profile-linkedin">
-                                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                        <img src="/bundles/front/assets/images/member_filter-2.jpg" alt="Martha Smith" />
-                                                    </div>
-                                                    <div class="member02-content">
-                                                        <div class="member02-content-inside">
-                                                            <h3 class="member02_name text-white">Martha Smith</h3>
-                                                            <h5 class="member02_position">Chief Executive Officer</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 relative">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="members_img_holder">
-                                                    <div class="memeber02-img-holder">
-                                                        <div class="linkedin-profile">
-                                                            <a target="_blank" href="https://www.linkedin.com/" class="member01_profile-linkedin">
-                                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                        <img src="/bundles/front/assets/images/member_filter-3.jpg" alt="Thomas Moriz" />
-                                                    </div>
-                                                    <div class="member02-content">
-                                                        <div class="member02-content-inside">
-                                                            <h3 class="member02_name text-white">Thomas Moriz</h3>
-                                                            <h5 class="member02_position">Chief Financial Officer</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 relative">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="members_img_holder">
-                                                    <div class="memeber02-img-holder">
-                                                        <div class="linkedin-profile">
-                                                            <a target="_blank" href="https://www.linkedin.com/" class="member01_profile-linkedin">
-                                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                        <img src="/bundles/front/assets/images/member_filter-4.jpg" alt="Laura Stone" />
-                                                    </div>
-                                                    <div class="member02-content">
-                                                        <div class="member02-content-inside">
-                                                            <h3 class="member02_name text-white">Laura Stone</h3>
-                                                            <h5 class="member02_position">Blockchain Developer</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 relative">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="members_img_holder">
-                                                    <div class="memeber02-img-holder">
-                                                        <div class="linkedin-profile">
-                                                            <a target="_blank" href="https://www.linkedin.com/" class="member01_profile-linkedin">
-                                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                        <img src="/bundles/front/assets/images/member_filter-5.jpg" alt="Alex Smith" />
-                                                    </div>
-                                                    <div class="member02-content">
-                                                        <div class="member02-content-inside">
-                                                            <h3 class="member02_name text-white">Alex Smith</h3>
-                                                            <h5 class="member02_position">Blockchain Developer</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 relative">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="members_img_holder">
-                                                    <div class="memeber02-img-holder">
-                                                        <div class="linkedin-profile">
-                                                            <a target="_blank" href="https://www.linkedin.com/" class="member01_profile-linkedin">
-                                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                        <img src="/bundles/front/assets/images/member_filter-6.jpg" alt="Jessica Moriz" />
-                                                    </div>
-                                                    <div class="member02-content">
-                                                        <div class="member02-content-inside">
-                                                            <h3 class="member02_name text-white">Jessica Moriz</h3>
-                                                            <h5 class="member02_position">Senior Web Developer</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 relative">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="members_img_holder">
-                                                    <div class="memeber02-img-holder">
-                                                        <div class="linkedin-profile">
-                                                            <a target="_blank" href="https://www.linkedin.com/" class="member01_profile-linkedin">
-                                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                        <img src="/bundles/front/assets/images/member_filter-8.jpg" alt="Robert Stone" />
-                                                    </div>
-                                                    <div class="member02-content">
-                                                        <div class="member02-content-inside">
-                                                            <h3 class="member02_name text-white">Robert Stone</h3>
-                                                            <h5 class="member02_position">Senior Web Developer</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 relative">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="members_img_holder">
-                                                    <div class="memeber02-img-holder">
-                                                        <div class="linkedin-profile">
-                                                            <a target="_blank" href="https://www.linkedin.com/" class="member01_profile-linkedin">
-                                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                        <img src="/bundles/front/assets/images/member_filter-7.jpg" alt="Adelaide Downey" />
-                                                    </div>
-                                                    <div class="member02-content">
-                                                        <div class="member02-content-inside">
-                                                            <h3 class="member02_name text-white">Adelaide Downey</h3>
-                                                            <h5 class="member02_position">Senior Copywriter</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mt_members2 mt_slider_members_team2 row wow fadeIn">
-
-                                    <div class="col-md-12 relative">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="members_img_holder">
-                                                    <div class="memeber02-img-holder">
-                                                        <div class="linkedin-profile">
-                                                            <a target="_blank" href="https://www.linkedin.com/" class="member01_profile-linkedin">
-                                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                        <img src="/bundles/front/assets/images/member_filter-7.jpg" alt="Adelaide Downey" />
-                                                    </div>
-                                                    <div class="member02-content">
-                                                        <div class="member02-content-inside">
-                                                            <h3 class="member02_name text-white">Adelaide Downey</h3>
-                                                            <h5 class="member02_position">Senior Copywriter</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 relative">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="members_img_holder">
-                                                    <div class="memeber02-img-holder">
-                                                        <div class="linkedin-profile">
-                                                            <a target="_blank" href="https://www.linkedin.com/" class="member01_profile-linkedin">
-                                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                        <img src="/bundles/front/assets/images/member_filter-8.jpg" alt="Robert Stone" />
-                                                    </div>
-                                                    <div class="member02-content">
-                                                        <div class="member02-content-inside">
-                                                            <h3 class="member02_name text-white">Robert Stone</h3>
-                                                            <h5 class="member02_position">Senior Web Developer</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 relative">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="members_img_holder">
-                                                    <div class="memeber02-img-holder">
-                                                        <div class="linkedin-profile">
-                                                            <a target="_blank" href="https://www.linkedin.com/" class="member01_profile-linkedin">
-                                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                        <img src="/bundles/front/assets/images/member_filter-6.jpg" alt="Jessica Moriz" />
-                                                    </div>
-                                                    <div class="member02-content">
-                                                        <div class="member02-content-inside">
-                                                            <h3 class="member02_name text-white">Jessica Moriz</h3>
-                                                            <h5 class="member02_position">Senior Web Developer</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 relative">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="members_img_holder">
-                                                    <div class="memeber02-img-holder">
-                                                        <div class="linkedin-profile">
-                                                            <a target="_blank" href="https://www.linkedin.com/" class="member01_profile-linkedin">
-                                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                        <img src="/bundles/front/assets/images/member_filter-5.jpg" alt="Alex Smith" />
-                                                    </div>
-                                                    <div class="member02-content">
-                                                        <div class="member02-content-inside">
-                                                            <h3 class="member02_name text-white">Alex Smith</h3>
-                                                            <h5 class="member02_position">Blockchain Developer</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 relative">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="members_img_holder">
-                                                    <div class="memeber02-img-holder">
-                                                        <div class="linkedin-profile">
-                                                            <a target="_blank" href="https://www.linkedin.com/" class="member01_profile-linkedin">
-                                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                        <img src="/bundles/front/assets/images/member_filter-4.jpg" alt="Laura Stone" />
-                                                    </div>
-                                                    <div class="member02-content">
-                                                        <div class="member02-content-inside">
-                                                            <h3 class="member02_name text-white">Laura Stone</h3>
-                                                            <h5 class="member02_position">Blockchain Developer</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 relative">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="members_img_holder">
-                                                    <div class="memeber02-img-holder">
-                                                        <div class="linkedin-profile">
-                                                            <a target="_blank" href="https://www.linkedin.com/" class="member01_profile-linkedin">
-                                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                        <img src="/bundles/front/assets/images/member_filter-3.jpg" alt="Thomas Moriz" />
-                                                    </div>
-                                                    <div class="member02-content">
-                                                        <div class="member02-content-inside">
-                                                            <h3 class="member02_name text-white">Thomas Moriz</h3>
-                                                            <h5 class="member02_position">Chief Financial Officer</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 relative">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="members_img_holder">
-                                                    <div class="memeber02-img-holder">
-                                                        <div class="linkedin-profile">
-                                                            <a target="_blank" href="https://www.linkedin.com/" class="member01_profile-linkedin">
-                                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                        <img src="/bundles/front/assets/images/member_filter-2.jpg" alt="Martha Smith" />
-                                                    </div>
-                                                    <div class="member02-content">
-                                                        <div class="member02-content-inside">
-                                                            <h3 class="member02_name text-white">Martha Smith</h3>
-                                                            <h5 class="member02_position">Chief Executive Officer</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-12 relative">
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                                <div class="members_img_holder">
-                                                    <div class="memeber02-img-holder">
-                                                        <div class="linkedin-profile">
-                                                            <a target="_blank" href="https://www.linkedin.com/" class="member01_profile-linkedin">
-                                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                        <img src="/bundles/front/assets/images/member_filter-1.jpg" alt="Robert Downey" />
-                                                    </div>
-                                                    <div class="member02-content">
-                                                        <div class="member02-content-inside">
-                                                            <h3 class="member02_name text-white">Robert Downey</h3>
-                                                            <h5 class="member02_position">Founder Technology Officer</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="spacer_80"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Section6 - BitWallet Testimonials -->
-                    <div class="clearfix"></div>
-                    <div id="to_testimonial" class="padding_top-80 text_center page-fill">
-                        <div class="container">
-                            <div class="row">
-                                <div class="testimonials02-container wow fadeIn">
-                                    <div class="row">
-                                        <div class="item col-md-12 relative">
-                                            <div class="testimonials_all_holder">
-                                                <div class="testimonial02-text-holder">
-                                                    <div class="testimonial02-content">
-                                                        <div class="testimonial02_text">
-                                                            <div class="testimonial02_rating_titles col-md-12">
-                                                                <h4 class="testimonial02_title col-md-6 text-white">Thomas Moriz</h4>
-                                                                <div class="testimonial02_stars col-md-6 text-white"></div>
-                                                            </div>
-                                                            <div class="testimonial02_text_content col-md-12 text-left">
-                                                                <p class="text-white">The support teams are very professional and friendly. Although I got quite intimidate by all settings and customisation of the theme, they helps make my life much easier. The support teams are very professional and friendly.
-                                                                    Although I got quite intimidate by all settings and customisation of the theme, they helps make my life much easier.</p>
-                                                            </div>
-                                                            <h4 class="testimonial02_position col-md-12 text-white">Regional Manager</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="item col-md-12 relative">
-                                            <div class="testimonials_all_holder">
-                                                <div class="testimonial02-text-holder">
-                                                    <div class="testimonial02-content">
-                                                        <div class="testimonial02_text">
-                                                            <div class="testimonial02_rating_titles col-md-12">
-                                                                <h4 class="testimonial02_title col-md-6 text-white">Robert Downey</h4>
-                                                                <div class="testimonial02_stars col-md-6 text-white"></div>
-                                                            </div>
-                                                            <div class="testimonial02_text_content col-md-12 text-left">
-                                                                <p class="text-white">The support teams are very professional and friendly. Although I got quite intimidate by all settings and customisation of the theme, they helps make my life much easier. The support teams are very professional and friendly.
-                                                                    Although I got quite intimidate by all settings and customisation of the theme, they helps make my life much easier.</p>
-                                                            </div>
-                                                            <h4 class="testimonial02_position col-md-12 text-white">General Director</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="item col-md-12 relative">
-                                            <div class="testimonials_all_holder">
-                                                <div class="testimonial02-text-holder">
-                                                    <div class="testimonial02-content">
-                                                        <div class="testimonial02_text">
-                                                            <div class="testimonial02_rating_titles col-md-12">
-                                                                <h4 class="testimonial02_title col-md-6 text-white">John Doe</h4>
-                                                                <div class="testimonial02_stars col-md-6 text-white"></div>
-                                                            </div>
-                                                            <div class="testimonial02_text_content col-md-12 text-left">
-                                                                <p class="text-white">The support teams are very professional and friendly. Although I got quite intimidate by all settings and customisation of the theme, they helps make my life much easier. The support teams are very professional and friendly.
-                                                                    Although I got quite intimidate by all settings and customisation of the theme, they helps make my life much easier.</p>
-                                                            </div>
-                                                            <h4 class="testimonial02_position col-md-12 text-white">Assistant Manager</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Section7 - Clients -->
-                    <div class="clearfix"></div>
-                    <div class="padding_top-80 text_center page-fill">
-                        <div class="container">
-                            <div class="row">
-                                <div class="wow fadeIn mt_clients_slider clients_container_shortcode-5 owl-carousel owl-theme">
-                                    <div class="clients_image_holder post">
-                                        <div class="item col-md-12">
-                                            <div class="clients_image_holder_inside post no-margin"><img class="client_image" src="/bundles/front/assets/images/home_shop_client2.png" alt="Client6" /></div>
-                                        </div>
-                                    </div>
-                                    <div class="clients_image_holder post">
-                                        <div class="item col-md-12">
-                                            <div class="clients_image_holder_inside post no-margin"><img class="client_image" src="/bundles/front/assets/images/home_shop_client1.png" alt="Client5" /></div>
-                                        </div>
-                                    </div>
-                                    <div class="clients_image_holder post">
-                                        <div class="item col-md-12">
-                                            <div class="clients_image_holder_inside post no-margin"><img class="client_image" src="/bundles/front/assets/images/home_shop_client2.png" alt="Client4" /></div>
-                                        </div>
-                                    </div>
-                                    <div class="clients_image_holder post">
-                                        <div class="item col-md-12">
-                                            <div class="clients_image_holder_inside post no-margin"><img class="client_image" src="/bundles/front/assets/images/home_shop_client1.png" alt="Client3" /></div>
-                                        </div>
-                                    </div>
-                                    <div class="clients_image_holder post">
-                                        <div class="item col-md-12">
-                                            <div class="clients_image_holder_inside post no-margin"><img class="client_image" src="/bundles/front/assets/images/home_shop_client2.png" alt="Client2" /></div>
-                                        </div>
-                                    </div>
-                                    <div class="clients_image_holder post">
-                                        <div class="item col-md-12">
-                                            <div class="clients_image_holder_inside post no-margin"><img class="client_image" src="/bundles/front/assets/images/home_shop_client1.png" alt="Client1" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
                     <!--Section 8 - NEWS -->
                     <div class="clearfix"></div>
                     <div class="bitwallet_blanks padding_top-80 page-fill">
-                        <div class="container">
+                        <div class="container" style="width: 100%; padding: 20px 15% 30px 15%;">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="title-subtile-holder wow fadeIn text_center no-padding">
-                                        <h1 class="section-title light_title no-margin">NEWS</h1>
+                                        <h1 class="section-title light_title no-margin">Derniers articles</h1>
                                         <div class="spacer_10"></div>
                                         <div class="clearfix"></div>
                                         <div class="section-border green_border no-margin"></div>
                                         <div class="spacer_10"></div>
                                         <div class="section-subtitle light_subtitle">
-                                            It’s an ever-changing business. To stay on top of the   <br> game, don’t forget to keep yourself in the know.
+                                            Voici toutes les dernières actualités concernant les cryptomonnaies
                                         </div>
                                     </div>
                                     <div class="spacer_80"></div>
                                     <div class="blog-posts simple-posts blog-posts-shortcode wow fadeIn">
                                         <div class="row">
                                             {% for lastArticle in lastArticles %}
-                                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                            <div class="col-xs-12 col-sm-6 col-md-4" style="margin-bottom: 20px;">
                                                 <article class="single-post list-view  no-padding no-margin">
                                                     <div class="blog_custom">
 
                                                         <!-- POST THUMBNAIL -->
                                                         <div class="col-md-12 post-thumbnail">
-                                                            <a class="relative" href="#"><img class="blog_post_image" src="{{ asset(lastArticle.image.webPath) }}" alt="What is Bitcoin Mining" /></a>
+                                                            <a class="relative" href="#"><img style="width: 100%; height:150px" class="blog_post_image" src="{{ asset(lastArticle.image.webPath) }}" alt="What is Bitcoin Mining" /></a>
                                                             <span class="time-n-date">{{lastArticle.date|date('d M')}}</span>
                                                         </div>
 
                                                         <!-- POST DETAILS -->
                                                         <div class="post-details col-md-12">
 
-                                                            <div class="title-n-excerpt">
+                                                            <div class="title-n-excerpt" style="height: 200px;">
                                                                 <h3 class="post-name row">
-                                                                    <a href="{{ path('view_article', {'idArticle' : lastArticle.id })}}" title="What is Bitcoin Mining">{{ lastArticle.content|striptags|truncate(30)|raw}}</a>
+                                                                    <a href="{{ path('view_article', {'idArticle' : lastArticle.id })}}" title="What is Bitcoin Mining">{{ lastArticle.content|striptags|truncate(50)|raw}}</a>
                                                                 </h3>
                                                                 <div class="post-excerpt row">
                                                                     <p>{{ lastArticle.content|striptags|truncate(100)|raw}}</p>
@@ -994,11 +246,11 @@
                     </div>
                     <!-- Section8 BitWallet - Know Your Customer -->
                     <div class="clearfix"></div>
-                    <div class="padding_top-80 text_center page-fill">
+                    <div class="padding_top-80 text_center page-fill" style="background-color: rgb(255,255,255);">
                         <div class="container">
                             <div class="row decentralized-customer">
-                                <h2 class="wow fadeIn">Know Your Customer</h2>
-                                <h3 class="wow fadeIn">Nemo enim ipsam voluptatem quia voluptas<br /> odit aut fugit, sed quia consequ.</h3>
+                                <h2 class="wow fadeIn" style="color:#171055">Newsletter</h2>
+                                <h3 class="wow fadeIn"  style="color:#171055">Restons connectés, inscris toi aux news</h3>
                                 <div class="spacer_30"></div>
                                 <div class="row">
                                     <div class="col-sm-2">
@@ -1011,10 +263,10 @@
                                             <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-335" method="post" data-id="335" data-name="newsletter">
                                                 <div class="mc4wp-form-fields">
                                                     <div class="newsletter">
-                                                        <div class="c-sign-up-form-input">
-                                                            <input type="email" name="EMAIL" placeholder="Insert your email" required />
+                                                        <div class="c-sign-up-form-input" style="color: white">
+                                                            <input type="email" name="EMAIL" placeholder="Adresse email..." required />
                                                         </div>
-                                                        <input type="submit" value="Submit" />
+                                                        <input type="submit" value="Envoyer" />
                                                     </div>
                                                 </div>
                                             </form>

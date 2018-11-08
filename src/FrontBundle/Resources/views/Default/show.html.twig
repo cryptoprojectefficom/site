@@ -176,10 +176,10 @@
                                         <div class="comment-respond">
                         <h3 class="comment-reply-title text-white">Poster un commentaire<small><a rel="nofollow" id="cancel-comment-reply-link" class="js-action" href="#"   style="display:none;">Cancel reply</a></small></h3>
                           {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                              {{ form_start(form) }}
-                                  {{ form_row(form.content, {'attr' : {'class': 'comment-form-author relative' }}) }}
-                                  {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}, 'label' : 'envoyer'}) }}
-                              {{ form_end(form) }}
+                                {{ form_start(form) }}
+                                   <textarea id="frontbundle_comment_content" name="frontbundle_comment[content]" required="required" class="comment-form-author relative"></textarea>
+                                    {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}, 'label' : 'envoyer'}) }}
+                                {{ form_end(form) }}
                             {% else %}
                               <p style="color: rgb(240, 240, 240)">Veuillez vous <a href="{{ path('fos_user_security_login') }}">connecter</a> ou vous <a href="{{ path('fos_user_registration_register') }}">inscrire</a> pour poster un commentaire </p>
                             {% endif %}

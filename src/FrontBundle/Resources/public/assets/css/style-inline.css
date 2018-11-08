@@ -655,6 +655,7 @@ body #navbar .menu-item.selected > a, body #navbar .menu-item:hover > a{
     color: #6cd086;
 }
 .data_background{
+    background-position: 50%;
     background-repeat: no-repeat;
 }
 .page-fill {
@@ -753,6 +754,18 @@ body #navbar .menu-item.selected > a, body #navbar .menu-item:hover > a{
     border-radius: 5px;
     margin-left: 20px;
 }
+.classic-button{
+    background: linear-gradient(to left, #4babf8 0%, #2d6ff6 40%, #4babf8 100%) !important;
+    padding: 1px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+.logout-button {
+    background: linear-gradient(to left, #F84B4B  0%, #F62D2D 40%, #F84B4B 100%) !important;
+    padding: 1px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
 #navbar .menu .to_whitepaper.menu-item a {
     border: solid 8px transparent;
     padding: 0px 13px !important;
@@ -802,6 +815,25 @@ body #navbar .menu-item.selected > a, body #navbar .menu-item:hover > a{
     border-color:rgba(255,255,255,0.01);
     background-position: 100% !important;
 }
+
+.bitwallet-btn.modeltheme_button .btn_custom_red_grad {
+    background: #4babf8; /* Old browsers */
+    background: -moz-linear-gradient(to left, rgb(255, 51, 0) 0%, rgb(255, 45, 0) 40%, rgb(255, 50, 0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(to left,  rgb(255, 51, 0) 0%, #rgb(255, 45, 0) 40%,  rgb(255, 50, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to left,  rgb(255, 51, 0) 0%, #rgb(255, 45, 0) 40%,  rgb(255, 50, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= rgb(255, 51, 0), endColorstr=#rgb(255, 45, 0),GradientType=0 ); /* IE6-9 */
+    border: 1px solid rgba(255,255,255,0.01);
+    background-position: 0%;
+    background-size: 200% 200%;
+    transition: all 250ms ease-in;
+    -ms-transition: all 250ms ease-in;
+    -webkit-transition: all 250ms ease-in;
+}
+#to_initial .bitwallet-btn.modeltheme_button .btn_custom_red_grad:hover {
+    border-color:rgba(255,255,255,0.01);
+    background-position: 100% !important;
+}
+
 .cryptic_one_page.data_background {
     background-position: center;
     background-position: right;
@@ -1180,6 +1212,16 @@ a.preview-post span {
         margin-left: 0px;
         margin-top: 10px;
         width: auto;
+    }
+    .data_background{
+    background: #171055 !important;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    }
+}
+@media (min-width: 769px) {
+    .desktop-padding {
+        padding: 0 15% !important;
     }
 }
 /* 10. Footer */
