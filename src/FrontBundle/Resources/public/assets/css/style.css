@@ -123,7 +123,8 @@
 /*--- 1. Body ---*/
 /*---------------------------------------------*/
 /* General styling */
-@import url("../cryptic/style.css");
+.avatar{display:inline-block;position:relative; padding:6px;border-radius:50%;-webkit-border-radius:50%; width: 50px;}
+@import url("/bundles/front/assets/css/cryptic/style.css");
 html,body { 
     height: 100%; 
     width: 100%; 

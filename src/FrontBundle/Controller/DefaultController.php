@@ -60,8 +60,9 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $article = $em->getRepository('CoreBundle:Article')->getArticleWithCommentAndNoComment($idArticle);
 
+        dump($article->getComment());
+
         $form = $this->get('form.factory')->create(CommentType::class, $comment);
-        $commentsByArticle = $em->getRepository('CoreBundle:Comment')->findBy(array('article' => $idArticle));
 
         $user = $this->getUser();
 
@@ -76,9 +77,8 @@ class DefaultController extends Controller
         }
 
         return $this->render('@Front/Default/show.html.twig', [
-            'articleContent' => $article,
+            'article' => $article,
             'form'   => $form->createView(),
-            'comment' => $commentsByArticle,
             'currentUser' => $user
         ]);
     }

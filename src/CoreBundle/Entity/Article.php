@@ -226,7 +226,7 @@ class Article
      */
     public function removeComment(Comment $comment)
     {
-      $this->comments->removeElement($comment);
+      $this->comment->removeElement($comment);
     }
 
     /**
@@ -234,7 +234,7 @@ class Article
      */
     public function getComment()
     {
-      return $this->comments;
+      return $this->comment;
     }
 
 

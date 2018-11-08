@@ -29,24 +29,24 @@
             <div class="col-md-9 main-content">
                 <div class="article-header">
                     <div class="article-details">
-                        <img src="{{ asset(articleContent.image.webPath) }}" alt="">
+                        <img src="{{ asset(article.image.webPath) }}" alt="">
 
                         <div class="clearfix"></div>
                         <h1 class="post-title text-white">
-                            <strong>{{ articleContent.title }}</strong>
+                            <strong>{{ article.title }}</strong>
                         </h1>
                         <div class="post-category-comment-date row">
-                            <span class="post-date"><i class="icon-calendar"></i>{{ articleContent.date|date("d/m/Y") }}</span>
+                            <span class="post-date"><i class="icon-calendar"></i>{{ article.date|date("d/m/Y") }}</span>
                             <span class="post-categories">
                                         <i class="icon-tag"></i>
-                                        {% for categorie in articleContent.categories %}
-                                            <a href="#" rel="tag">{{ categorie.name }}</a>{%  if (articleContent.categories|length) > 1 %} - {% endif %}
+                                        {% for categorie in article.categories %}
+                                            <a href="#" rel="tag">{{ categorie.name }}</a>{%  if (article.categories|length) > 1 %} - {% endif %}
                                         {% endfor %}
 
                                     </span>
                             <span class="post-author">
                                         <i class="icon-user icons"></i>
-                                        <a href="#">{{ articleContent.author }}</a>
+                                        <a href="#">{{ article.author }}</a>
                                     </span>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                 <!-- CONTENT -->
                 <div class="article-content">
                     <p style="color:white">
-                    {{articleContent.content}}
+                    {{article.content}}
                     </p>
                 </div>
                 <!-- Cryptocurrency List Widget -->
@@ -149,30 +149,32 @@
 
 
                 <div class="comments-area">
-                    {% for comments in comment %}
-
+                    {% for comment in article.comment %}
                         {% if currentUser is null %}
                         <div class="comment-content other-message">
-                          <i><span style="font-size: 12px; color: rgba(240, 240, 240)">{{ comments.date|date('d/m/Y') }}</span> <span style="color: rgb(230, 103, 24); font-weight: bold">{{ comments.user.username}}</span></i>
-                          <p style="color: rgb(240, 240, 240)">{{ comments.content }}<p>
+                          <i><span style="font-size: 12px; color: rgba(240, 240, 240)">{{ comment.date|date('d/m/Y') }}</span> <span style="color: rgb(230, 103, 24); font-weight: bold">{{ comment.user.username}}</span></i>
+                          <img class="avatar" src="{{ asset(comment.user.avatar.webPath) }}" alt="">
+
+                          <p style="color: rgb(240, 240, 240)">{{ comment.content }}<p>
                         </div>
 
-                          {% elseif comments.user.id == currentUser.id %}
+                          {% elseif comment.user.id == currentUser.id %}
                         <div class="comment-content my-message">
-                          <i style="  border-bottom: 1px solid #f5f4f4"><span style="font-size: 12px; color: rgba(240, 240, 240)">{{ comments.date|date('d/m/Y') }}</span> <span style="color: rgb(230, 103, 24); font-weight: bold">{{ comments.user.username}}</span></i>
-                          <p style="color: rgb(240, 240, 240)">{{ comments.content }}<p>
+                          <i style="  border-bottom: 1px solid #f5f4f4"><span style="font-size: 12px; color: rgba(240, 240, 240)">{{ comment.date|date('d/m/Y') }}</span> <span style="color: rgb(230, 103, 24); font-weight: bold">{{ comment.user.username}}</span></i> 
+                          <img class="avatar" src="{{ asset(comment.user.avatar.webPath) }}" alt="">
+                          <p style="color: rgb(240, 240, 240)">{{ comment.content }}<p>
                         </div>
 
                           {% else %}
 
                           <div class="comment-content other-message">
-                            <i><span style="font-size: 12px; color: rgba(240, 240, 240)">{{ comments.date|date('d/m/Y') }}</span> <span style="color: rgb(230, 103, 24); font-weight: bold">{{ comments.user.username}}</span></i>
-                            <p style="color: rgb(240, 240, 240)">{{ comments.content }}<p>
+                            <i><span style="font-size: 12px; color: rgba(240, 240, 240)">{{ comment.date|date('d/m/Y') }}</span> <span style="color: rgb(230, 103, 24); font-weight: bold">{{ comment.user.username}}</span></i>
+                            <p style="color: rgb(240, 240, 240)">{{ comment.content }}<p>
                         </div>
                           {% endif %}
                         {% endfor %}
                                         <div class="comment-respond">
-                        <h3 class="comment-reply-title text-white">Laisse un commentaire<small><a rel="nofollow" id="cancel-comment-reply-link" class="js-action" href="#"   style="display:none;">Cancel reply</a></small></h3>
+                        <h3 class="comment-reply-title text-white">Poster un commentaire<small><a rel="nofollow" id="cancel-comment-reply-link" class="js-action" href="#"   style="display:none;">Cancel reply</a></small></h3>
                           {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                               {{ form_start(form) }}
                                   {{ form_row(form.content, {'attr' : {'class': 'comment-form-author relative' }}) }}
