@@ -147,37 +147,40 @@
                 </div>
                 <div class="clearfix"></div>
 
-                <!-- COMMENTS -->
+
                 <div class="comments-area">
-                    <div class="comment-respond">
+                    {% for comments in comment %}
+
+                        {% if currentUser is null %}
+                        <div class="comment-content other-message">
+                          <i><span style="font-size: 12px; color: rgba(240, 240, 240)">{{ comments.date|date('d/m/Y') }}</span> <span style="color: rgb(230, 103, 24); font-weight: bold">{{ comments.user.username}}</span></i>
+                          <p style="color: rgb(240, 240, 240)">{{ comments.content }}<p>
+                        </div>
+
+                          {% elseif comments.user.id == currentUser.id %}
+                        <div class="comment-content my-message">
+                          <i style="  border-bottom: 1px solid #f5f4f4"><span style="font-size: 12px; color: rgba(240, 240, 240)">{{ comments.date|date('d/m/Y') }}</span> <span style="color: rgb(230, 103, 24); font-weight: bold">{{ comments.user.username}}</span></i>
+                          <p style="color: rgb(240, 240, 240)">{{ comments.content }}<p>
+                        </div>
+
+                          {% else %}
+
+                          <div class="comment-content other-message">
+                            <i><span style="font-size: 12px; color: rgba(240, 240, 240)">{{ comments.date|date('d/m/Y') }}</span> <span style="color: rgb(230, 103, 24); font-weight: bold">{{ comments.user.username}}</span></i>
+                            <p style="color: rgb(240, 240, 240)">{{ comments.content }}<p>
+                        </div>
+                          {% endif %}
+                        {% endfor %}
+                                        <div class="comment-respond">
                         <h3 class="comment-reply-title text-white">Laisse un commentaire<small><a rel="nofollow" id="cancel-comment-reply-link" class="js-action" href="#"   style="display:none;">Cancel reply</a></small></h3>
-                        <form action="#" method="post" class="comment-form" novalidate>
-                            <p class="comment-notes"></p>
-                            <div class=" form-comment">
-                                <p class="comment-form-author relative ">
-                                    <textarea cols="45" rows="5" aria-required="true" placeholder="Votre commentaire..." name="comment"></textarea>
-                                </p>
-                            </div>
-                            <div class="row form-fields">
-                                <p class="comment-form-author relative col-md-4">
-                                    <input class="focus-me" placeholder="Votre nom..." name="author" type="text" value="" size="30" />
-                                    <i class="icon-user absolute"></i>
-                                </p>
-                                <p class="comment-form-author relative col-md-4">
-                                    <input class="focus-me" placeholder="Votre email..." name="email" type="text" value="" size="30" />
-                                    <i class="icon-envelope absolute"></i>
-                                </p>
-                                <p class="comment-form-author relative col-md-4">
-                                    <input class="focus-me" placeholder="Votre site..." name="url" type="text" value="" size="30" />
-                                    <i class="icon-globe absolute"></i>
-                                </p>
-                            </div>
-                            <p class="form-submit">
-                                <input name="submit" type="submit" class="submit" value="Ajouter le commentaire" />
-                                <input type='hidden' name='comment_post_ID'  value   = '329' />
-                                <input type='hidden' name='comment_parent' value='0' />
-                            </p>
-                        </form>
+                          {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                              {{ form_start(form) }}
+                                  {{ form_row(form.content, {'attr' : {'class': 'comment-form-author relative' }}) }}
+                                  {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}, 'label' : 'envoyer'}) }}
+                              {{ form_end(form) }}
+                            {% else %}
+                              <p style="color: rgb(240, 240, 240)">Veuillez vous <a href="{{ path('fos_user_security_login') }}">connecter</a> ou vous <a href="{{ path('fos_user_registration_register') }}">inscrire</a> pour poster un commentaire </p>
+                            {% endif %}
                     </div>
                     <!-- #respond -->
                 </div>

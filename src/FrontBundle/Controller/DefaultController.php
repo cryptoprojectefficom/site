@@ -6,9 +6,11 @@ use CoreBundle\Entity\Article;
 use CoreBundle\Entity\Comment;
 use CoreBundle\Entity\User;
 
-use CoreBundle\Form\CommentType;
+use FrontBundle\Form\CommentType;
 
-use Unirest\Request;
+use Unirest\Request as RequestApi;
+use Symfony\Component\HttpFoundation\Request;
+
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -33,15 +35,16 @@ class DefaultController extends Controller
         // //API COINMARKET
         // $headers = array('Accept' => 'application/json', 'X-CMC_PRO_API_KEY' => 'dc1679ff-7e85-468e-ba6d-361e47efb13f');
                 
-        // $response = Request::get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?convert=EUR&limit=500',$headers);
-        // $coinSearch = ['ETH', 'BTC', 'LTC', 'XRP', 'EOS', 'XLM', 'DASH', 'ADA', 'TRX', 'MIOTA', 'NEO', 'XTZ'];
+        $response = RequestApi::get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?convert=EUR&limit=500',$headers);
+        $coinSearch = ['ETH', 'BTC', 'LTC', 'XRP', 'EOS', 'XLM', 'DASH', 'ADA', 'TRX', 'MIOTA', 'NEO', 'XTZ'];
 
-        // $coinFooter = [];
-        // foreach ($response->body->data as $item) {
-        //     if(in_array($item->symbol, $coinSearch)) {
-        //         $coinFooter[] = $item;
-        //     }
-        // }
+        $coinFooter = [];
+        foreach ($response->body->data as $item) {
+            if(in_array($item->symbol, $coinSearch)) {
+                $coinFooter[] = $item;
+            }
+        }
+
 
         $lastArticles = $em->getRepository('CoreBundle:Article')->findBy( array() ,array('date' => 'desc'), 4, 0);
 
@@ -51,13 +54,33 @@ class DefaultController extends Controller
     /**
      * @Route("/article/{idArticle}", name="view_article")
      */
-    public function showArticleAction($idArticle)
+    public function showArticleAction(Request $request, $idArticle)
     {
+        $comment = new Comment();
         $em = $this->getDoctrine()->getManager();
-        $articleContent = $em->getRepository('CoreBundle:Article')->getArticleWithCommentAndNoComment($idArticle);
+        $article = $em->getRepository('CoreBundle:Article')->getArticleWithCommentAndNoComment($idArticle);
 
+        $form = $this->get('form.factory')->create(CommentType::class, $comment);
+        $commentsByArticle = $em->getRepository('CoreBundle:Comment')->findBy(array('article' => $idArticle));
 
-        return $this->render('@Front/Default/show.html.twig', ['articleContent' => $articleContent]);
+        $user = $this->getUser();
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            //Je renseigne le change $article avec l'Id de l'article
+            $comment->setArticle($article);
+            $comment->setUser($user);
+            $em->persist($comment);
+            $em->flush();
+
+            return $this->redirectToRoute('view_article', array('idArticle' => $article->getId()));
+        }
+
+        return $this->render('@Front/Default/show.html.twig', [
+            'articleContent' => $article,
+            'form'   => $form->createView(),
+            'comment' => $commentsByArticle,
+            'currentUser' => $user
+        ]);
     }
 
     /**
@@ -71,8 +94,8 @@ class DefaultController extends Controller
 
         // $headers = array('Accept' => 'application/json', 'X-CoinAPI-Key' => '044A1C06-AFE6-4EF3-9223-0363770C3E25');
                 
-        // $responseValYest = Request::get('https://rest.coinapi.io/v1/exchangerate/BTC/EUR?time='.$yesterday,$headers);
-        // $responseNow = Request::get('https://rest.coinapi.io/v1/exchangerate/BTC/EUR',$headers);
+        $responseValYest = RequestApi::get('https://rest.coinapi.io/v1/exchangerate/BTC/EUR?time='.$yesterday,$headers);
+        $responseNow = RequestApi::get('https://rest.coinapi.io/v1/exchangerate/BTC/EUR',$headers);
 
 
         // $valLast = round($responseValYest->body->rate, 2);
@@ -93,9 +116,9 @@ class DefaultController extends Controller
         // $yesterday = $date->modify('-1 days')->format('Y-m-d\TH:i:s\Z');
 
         //  $headers = array('Accept' => 'application/json', 'X-CoinAPI-Key' => '044A1C06-AFE6-4EF3-9223-0363770C3E25');
-                
-        //  $responseValYest = Request::get('https://rest.coinapi.io/v1/exchangerate/LTC/EUR?time='.$yesterday,$headers);
-        // $responseNow = Request::get('https://rest.coinapi.io/v1/exchangerate/LTC/EUR',$headers);
+
+         $responseValYest = RequestApi::get('https://rest.coinapi.io/v1/exchangerate/LTC/EUR?time='.$yesterday,$headers);
+        $responseNow = RequestApi::get('https://rest.coinapi.io/v1/exchangerate/LTC/EUR',$headers);
 
 
         // $valLast = round($responseValYest->body->rate, 2);
@@ -118,9 +141,8 @@ class DefaultController extends Controller
 
         // $headers = array('Accept' => 'application/json', 'X-CoinAPI-Key' => '044A1C06-AFE6-4EF3-9223-0363770C3E25');
                 
-        // $responseValYest = Request::get('https://rest.coinapi.io/v1/exchangerate/ETH/EUR?time='.$yesterday,$headers);
-        // $responseNow = Request::get('https://rest.coinapi.io/v1/exchangerate/ETH/EUR',$headers);
-
+        $responseValYest = RequestApi::get('https://rest.coinapi.io/v1/exchangerate/ETH/EUR?time='.$yesterday,$headers);
+        $responseNow = RequestApi::get('https://rest.coinapi.io/v1/exchangerate/ETH/EUR',$headers);
 
         // $valLast = round($responseValYest->body->rate, 2);
         // $newVal = round($responseNow->body->rate, 2);
