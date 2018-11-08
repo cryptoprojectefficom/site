@@ -8666,6 +8666,7 @@ header.header4 .right-side-social-actions .mt-login-icon i:hover {
     -webkit-transition: all 250ms ease-in-out;
     visibility: hidden;
     padding: 5px;
+    background-color: #170B3B;
 }
 #navbar .menu-item > a {
     display: block;
@@ -24701,6 +24702,7 @@ header.section-header {
 .text_left .section-subtitle {
     text-align: left !important;
     margin: 0;
+    width:500px;
 }
 .text_right .section-title {
     text-align: right !important;

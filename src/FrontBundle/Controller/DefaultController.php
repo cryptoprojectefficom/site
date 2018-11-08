@@ -30,22 +30,22 @@ class DefaultController extends Controller
             $output[]=$em->getRepository('CoreBundle:Article')->getArticleWithCategoriesLimit($value->getId());
         }
 
-        //API COINMARKET
-        $headers = array('Accept' => 'application/json', 'X-CMC_PRO_API_KEY' => 'dc1679ff-7e85-468e-ba6d-361e47efb13f');
+        // //API COINMARKET
+        // $headers = array('Accept' => 'application/json', 'X-CMC_PRO_API_KEY' => 'dc1679ff-7e85-468e-ba6d-361e47efb13f');
                 
-        $response = Request::get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?convert=EUR&limit=500',$headers);
-        $coinSearch = ['ETH', 'BTC', 'LTC', 'XRP', 'EOS', 'XLM', 'DASH', 'ADA', 'TRX', 'MIOTA', 'NEO', 'XTZ'];
+        // $response = Request::get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?convert=EUR&limit=500',$headers);
+        // $coinSearch = ['ETH', 'BTC', 'LTC', 'XRP', 'EOS', 'XLM', 'DASH', 'ADA', 'TRX', 'MIOTA', 'NEO', 'XTZ'];
 
-        $coinFooter = [];
-        foreach ($response->body->data as $item) {
-            if(in_array($item->symbol, $coinSearch)) {
-                $coinFooter[] = $item;
-            }
-        }
+        // $coinFooter = [];
+        // foreach ($response->body->data as $item) {
+        //     if(in_array($item->symbol, $coinSearch)) {
+        //         $coinFooter[] = $item;
+        //     }
+        // }
 
         $lastArticles = $em->getRepository('CoreBundle:Article')->findBy( array() ,array('date' => 'desc'), 4, 0);
 
-        return $this->render('@Front/Default/index.html.twig', ['lastArticles' => $lastArticles, 'articles' => $output, 'CoinFooter' => $coinFooter]);
+        return $this->render('@Front/Default/index.html.twig', ['lastArticles' => $lastArticles, 'articles' => $output, 'CoinFooter' => null]);
     }
 
     /**

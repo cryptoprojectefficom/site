@@ -1,35 +1,72 @@
 {% extends "@Core/Default/layout.html.twig" %}
 {% block body %}
-<!-- Section1 - BitWallet One Page -->
-<div class="clearfix"></div>
-<div id="to_initial" class="padding_top-80 cryptic_one_page data_background" data-background="/bundles/front/assets/images/background-2.png">
-    <div class="padding_80 text-center">
-        <div class="container">
-            <div class="row vc_row-has-fill">
-                <div class="spacer_80"></div>
-                <div class="col-sm-9 col-md-6">
-                    <h1 class="wow fadeInDown wpb_start_animation">Landing Page for<br /> Initial Coin Offering</h1>
-                    <h3 class="wow fadeInDown wpb_start_animation">Minimum purchase is 50 Coins tokens. Get a bonus<br /> from 5% to 25% on every token purchase</h3>
-                    <h2 class="wow fadeInDown wpb_start_animation">SECOND STEP CLOSING IN</h2>
-                  
-                    <div class="spacer_30"></div>
-                    <div class="text-right bitwallet-btn modeltheme_button wow fadeInLeft wpb_start_animation">
-                        <a href="{{ path('fos_user_security_login') }}" class="button-winona btn btn-medium btn_custom_blue_grad">Connexion</a>
-                    </div>
-                    <div class="text-left bitwallet-btn modeltheme_button wow fadeInLeft wpb_start_animation">
-                        <a href="{{ path('fos_user_registration_register') }}" class="button-winona btn btn-medium btn_to_whitepaper">Inscription</a>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="vc_column-inner ">
-                        <div class="wpb_wrapper"></div>
-                    </div>
-                </div>
-                <div class="spacer_80"></div>
-                <div class="spacer_80"></div>
-            </div>
-        </div>
-    </div>
-</div>
+ <!-- Section3 - BitWallet onBlockchain -->
+ <div class="clearfix"></div>
+ <div id="to_products" class="padding_top-80 text_center page-fill">
+     <div class="container">
+         <div class="row vc_row-has-fill">
+             <div class="col-sm-7">
+                 <div class="title-subtile-holder wow fadeInLeft text_left">
+                     <h1 class="section-title light_title no-margin">Le début des monnaies numériques</h1>
+                     <div class="spacer_10"></div>
+                     <div class="clearfix"></div>
+                     <div class="section-border green_border no-margin"></div>
+                     <div class="spacer_10"></div>
+                     <div class="section-subtitle light_subtitle">
+                            L'histoire de la cryptomonnaie est en fait assez courte. Oui, nous avons eu des systèmes de monnaie numérique avant que ces cryptomonnaies existaient, mais ils ne sont pas la même chose.
+							Les anciennes versions de monnaies numériques étaient strictement centralisée, alors que ces nouvelles formes de crypto-monnaie, comme Bitcoin et Ethereum, sont décentralisées dans leur nature</div>
+                 </div>
+                 <div class="spacer_40"></div>
+                 {# <div class="text-center bitwallet-btn modeltheme_button wow fadeInLeft">
+                     <a href="#" class="button-winona btn btn-medium btn_custom_blue_grad">WHITEPAPPER</a>
+                 </div> #}
+             </div>
+             <div class="col-sm-5">
+                 <figure class="fadeInRight wow">
+                     <img width="520" height="415" src="/bundles/front/assets/images/Vector-Smart-Object9_2.png" class="fadeInRight wow" alt="Vector-Smart-Object10"/>
+                 </figure>
+             </div>
+             <div class="spacer_80"></div>
+             <div class="clearfix"></div>
+             <div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_100 vc_sep_pos_align_center vc_separator_no_text wow fadeIn">
+                 <span class="vc_sep_holder vc_sep_holder_l">
+                     <span class="sep_line"></span>
+                 </span>
+                 <span class="vc_sep_holder vc_sep_holder_r">
+                     <span class="sep_line"></span>
+                 </span>
+             </div>
+             <div class="spacer_50"></div>
+             <div class="col-sm-6 vc_col-has-fill">
+                 <div class="wpb_single_image wpb_content_element vc_align_left wow fadeInLeft">
+                     <figure class="wpb_wrapper vc_figure">
+                         <div class="vc_single_image-wrapper   vc_box_border_grey">
+                             <img width="335" height="450" src="/bundles/front/assets/images/Vector-Smart-Object9_00.png" class="vc_single_image-img attachment-full" alt="Vector-Smart-Object9" />    
+                         </div>
+                     </figure>
+                 </div>
+             </div>
+             <div class="col-sm-6">
+                 <div class="title-subtile-holder wow fadeInRight text_left">
+                     <h1 class="section-title light_title no-margin">La décentralisation des monnaies numériques</h1>
+                     <div class="spacer_10"></div>
+                     <div class="clearfix"></div>
+                     <div class="section-border green_border no-margin"></div>
+                     <div class="spacer_10"></div>
+                     <div class="section-subtitle light_subtitle ">
+                            Tout cela a commencé avec le Bitcoin tristement célèbre et un homme nommé Satoshi Nakamoto.
+                            L'objectif de Nakamoto au commencement était rien de plus que de créer un système informatique de trésorerie pairs à pairs (P2P) .
+                            Les gens avaient longtemps essayé de créer une sorte de système d'argent numérique en ligne, mais avaient toujours échoué en raison des problèmes avec la centralisation.
+                            il a donc décidé de créer un système de trésorerie numérique qui n'avait aucune autorité centralisée.
+                            C'est ainsi que vis la naissance du bitcoins et l'utilisation de la blockchain pour une monnaie numérique </div>
+                 </div>
+                 <div class="spacer_40"></div>
+                 {# <div class="text-center bitwallet-btn modeltheme_button wow fadeInRight">
+                     <a href="#" class="button-winona btn btn-medium btn_custom_blue_grad">READ MORE</a>
+                 </div> #}
+             </div>
+         </div>
+     </div>
+ </div>
 
 {% endblock body %}
