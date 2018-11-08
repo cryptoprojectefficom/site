@@ -53,8 +53,14 @@ class ArticleRepository extends EntityRepository
     $qb
         ->leftJoin('a.image', 'i')
         ->leftJoin('a.categories', 'c')
+        ->leftJoin('a.comment', 'co')
+        ->join('co.user', 'u')
+        ->leftJoin('u.avatar', 'av')
         ->addSelect('c')
+        ->addSelect('av')
+        ->addSelect('u')
         ->addSelect('i')
+        ->addSelect('co')
         ->where('a.id = :id')
         ->setParameter('id', $articleId)
       ;

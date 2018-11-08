@@ -32,7 +32,8 @@ framework:
         save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
     fragments: ~
     http_method_override: true
-    assets: ~
+    assets:
+        base_path: '/'
     php_errors:
         log: true
 
@@ -107,3 +108,11 @@ fos_user:
     registration:
         form:
             type: AdminBundle\Form\RegistrationType
+
+# app/config/config.yml
+
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
